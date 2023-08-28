@@ -18,7 +18,7 @@
 
 ### （1）原理图设计及其各模块简介
 
-![image](https://github.com/bsgbsg7/Shiroe/tree/master/Note/image-20230828160040461.png)
+![image](Note/image-20230828160040461.png)
 
 **主控：** ESP32-S3-WROOM-1(N16R8)模组，内置2.4GHz WiFi以及低功耗蓝牙，双核 32 位 LX7 微处理器，高达 240 MHz 的时钟频率， 384 KB ROM ，512 KB SRAM ，16MB Flash，8MB PSRAM。
 
@@ -40,11 +40,11 @@
 
 ### （2）印制板图设计
 
-![image](https://github.com/bsgbsg7/Shiroe/tree/master/Note/image-20230828160051208.png)
+![image](Note/image-20230828160051208.png)
 
-![image](https://github.com/bsgbsg7/Shiroe/tree/master/Note/image-20230828160100934.png)
+![image](Note/image-20230828160100934.png)
 
-![image](https://github.com/bsgbsg7/Shiroe/tree/master/Note/image-20230828160108869.png)
+![image](Note/image-20230828160108869.png)
 
 ## 三、软件设计
 
@@ -72,7 +72,7 @@
 
 ​	一开始电源转换选择不合理，pcb绘制等出现了很多问题，感谢老师的耐心指导和纠正。设计第一版pcb出现了许多问题：
 
-![image](https://github.com/bsgbsg7/Shiroe/tree/master/Note/image-20230828160259605.png)
+![image](Note/image-20230828160259605.png)
 
 **初版pcb：**
 
@@ -106,13 +106,13 @@
 
 ​	LVGL涉及非常多的指针，一不注意就可能会出错。可以看到，对于自己创建的指针组合成的结构体，在定时器传递参数时必须转换为指针。而对于LVGL创建的组件，由于本身就是指针，传递时传递本身即可。此处出现问题不会报错，但是会在不正常运行或者重启，一定要谨慎。
 
-![image](https://github.com/bsgbsg7/Shiroe/tree/master/Note/image-20230828160250787.png)
+![image](Note/image-20230828160250787.png)
 
-![image](https://github.com/bsgbsg7/Shiroe/tree/master/Note/image-20230828160244839.png)
+![image](Note/image-20230828160244839.png)
 
 ​	**定时器导致的重启：**
 
-  	 LVGL页面切换必须使用lv_timer_del() 函数删除当前页面的所有定时器，否则会导致重启（具体原因暂时未知），因此定时器需要定义为全局变量，在页面切换时非常谨慎、合理地删除或者创建，连接页面交互的链表也要在合适的时候使用free() 释放地址空间。
+​	LVGL页面切换必须使用lv_timer_del() 函数删除当前页面的所有定时器，否则会导致重启（具体原因暂时未知），因此定时器需要定义为全局变量，在页面切换时非常谨慎、合理地删除或者创建，连接页面交互的链表也要在合适的时候使用free() 释放地址空间。
 
 5) #### 重定义问题
 
