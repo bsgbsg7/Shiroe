@@ -18,7 +18,7 @@
 
 ### （1）原理图设计及其各模块简介
 
-![image-20230828160040461](Note/image-20230828160040461.png)
+![image](https://github.com/bsgbsg7/Shiroe/tree/master/Note/image-20230828160040461.png)
 
 **主控：** ESP32-S3-WROOM-1(N16R8)模组，内置2.4GHz WiFi以及低功耗蓝牙，双核 32 位 LX7 微处理器，高达 240 MHz 的时钟频率， 384 KB ROM ，512 KB SRAM ，16MB Flash，8MB PSRAM。
 
@@ -40,11 +40,11 @@
 
 ### （2）印制板图设计
 
-![image-20230828160051208](Note/image-20230828160051208.png)
+![image](README/image-20230828160051208.png)
 
-![image-20230828160100934](Note/image-20230828160100934.png)
+![image](README/image-20230828160100934.png)
 
-![image-20230828160108869](Note/image-20230828160108869.png)
+![image](README/image-20230828160108869.png)
 
 ## 三、软件设计
 
