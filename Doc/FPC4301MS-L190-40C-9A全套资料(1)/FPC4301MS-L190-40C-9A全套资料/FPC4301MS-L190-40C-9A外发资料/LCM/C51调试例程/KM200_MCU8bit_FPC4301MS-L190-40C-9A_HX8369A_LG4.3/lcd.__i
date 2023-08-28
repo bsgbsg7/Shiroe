@@ -1,0 +1,1 @@
+"lcd\lcd.c" OPTIMIZE (8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\lcd.lst) TABS (2) OBJECT(lcd.obj)

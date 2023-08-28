@@ -1,0 +1,63 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"makefile.extensionOutputFolder": "./.vscode",
+		"files.associations": {
+			"*.ino": "cpp",
+			"mytest.h": "c",
+			"lv_port_indev.h": "c",
+			"lv_log.h": "c",
+			"lv_demos.h": "c",
+			"lvgl.h": "c",
+			"lv_examples.h": "c",
+			"array": "cpp",
+			"initializer_list": "cpp",
+			"list": "cpp",
+			"regex": "cpp",
+			"vector": "cpp",
+			"xhash": "cpp",
+			"xstring": "cpp",
+			"xtree": "cpp",
+			"xutility": "cpp",
+			"algorithm": "cpp",
+			"functional": "cpp",
+			"iterator": "cpp",
+			"memory": "cpp",
+			"xlocmon": "cpp",
+			"xlocnum": "cpp",
+			"xmemory": "cpp",
+			"mylvgl.h": "c",
+			"arduino.h": "c",
+			"wifi.h": "c",
+			"weather.h": "c",
+			"gui_guider.h": "c",
+			"guider_fonts.h": "c",
+			"custom.h": "c",
+			"events_init.h": "c",
+			"lv_font.h": "c",
+			"stdio.h": "c",
+			"deque": "cpp",
+			"string": "cpp",
+			"unordered_map": "cpp",
+			"unordered_set": "cpp",
+			"string_view": "cpp",
+			"chrono": "cpp",
+			"*.tcc": "c",
+			"i2c_bm8563.h": "c",
+			"dht_u.h": "c",
+			"dht.h": "c",
+			"cmath": "cpp",
+			"condition_variable": "cpp",
+			"fstream": "cpp",
+			"mutex": "cpp",
+			"ostream": "cpp",
+			"iostream": "cpp",
+			"system_error": "cpp",
+			"random": "cpp"
+		}
+	}
+}

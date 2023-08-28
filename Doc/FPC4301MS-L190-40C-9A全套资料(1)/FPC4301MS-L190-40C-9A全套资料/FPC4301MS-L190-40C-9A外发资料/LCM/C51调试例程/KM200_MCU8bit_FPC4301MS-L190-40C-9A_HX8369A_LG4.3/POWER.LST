@@ -1,0 +1,123 @@
+C51 COMPILER V9.01   POWER                                                                 09/19/2022 09:37:10 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE POWER
+OBJECT MODULE PLACED IN POWER.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE POWER.C OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "c8051F340.h"
+   2          #include "main.h"
+   3          #include "POWER.h"
+   4          #include <lcd\lcd.h>
+   5          
+   6              extern unsigned char POWER_VOL,PCH,vcom; 
+   7          void Power_on(void)
+   8          {
+   9   1        
+  10   1      POWER_VOL=0;    
+  11   1        FM_short();
+  12   1      IOVCC_EN = 1;
+  13   1      VCI_EN = 1;
+  14   1      BL_EN = 1;
+  15   1      Delay(50);    
+  16   1      LCD_Init(); 
+  17   1      
+  18   1      PCH=10; //第一步画面
+  19   1      lcd_show(PCH);
+  20   1      #ifdef READ_REG   
+  21   1      DispRegValue(IC_REG,REG_NUM); //读ID,读寄存器参数
+  22   1      #endif
+  23   1      
+  24   1        
+  25   1      }
+  26          
+  27          
+  28          void Power_off(void)
+  29          {
+  30   1      vcom=vcom_default;
+  31   1        sleep();  
+  32   1        IOVCC_EN = 0;
+  33   1        VCI_EN = 0;
+  34   1        BL_EN = 0;
+  35   1        MTP_EN = 0;
+  36   1        FMQ =0;   
+  37   1        POWER_VOL=1;
+  38   1        OLED_ShowString(0,6,"                ");
+  39   1        #ifdef READ_REG   
+  40   1        Disp_ID_clr();//清除缓存的ID数据    
+  41   1        #endif
+  42   1        FM_short(); 
+  43   1      }
+  44          
+  45          
+  46          void lcd_show(unsigned char ShowId)
+  47          {
+  48   1          switch(ShowId)
+  49   1          {
+  50   2            
+  51   2            case 10: DispScaleVer_Gray();break;
+  52   2            case 11: DispColor(GRAY50);break;
+  53   2            case 12: DispColor(WHITE);break;
+  54   2            case 13: DispColor(RED);break;
+  55   2            case 14: DispColor(GREEN);break;
+C51 COMPILER V9.01   POWER                                                                 09/19/2022 09:37:10 PAGE 2   
+
+  56   2            case 15: DispColor(BLUE);break;
+  57   2            case 16: DispFrame();break;
+  58   2        //    case 17: DispGrayHor16();break;//
+  59   2      
+  60   2              #ifdef PIC_T    
+  61   2            case 17: DispPic(pic_eval);break;
+  62   2              #endif  
+  63   2            
+  64   2            
+  65   2            default:DispGrayHor16(); break;
+  66   2      
+  67   2          }
+  68   1      }
+  69          
+  70            
+  71          void VCOM_ADJ_(void)
+  72          {
+  73   1        u8 table_V[]="0123456789";    
+  74   1        u8 gg,ss,bb;
+  75   1      
+  76   1      //*******************************VCOM调试方式一*****************************************//
+  77   1            
+  78   1      //WriteComm(0XC5);
+  79   1      //WriteData(0x00);
+  80   1      //WriteData(vcom);
+  81   1      //WriteData(0x80);
+  82   1        
+  83   1        WriteComm(0xC4); WriteData(vcom); 
+  84   1      //************************************************************************//  
+  85   1        
+  86   1      bb=vcom/100;// 2
+  87   1      ss=(vcom%100)/10;
+  88   1      gg=(vcom%100)%10;
+  89   1      OLED_ShowString(0,6,"                ");  
+  90   1      OLED_ShowString(0,6,"     Dat:");   
+  91   1      OLED_ShowChar(86,6,table_V[bb]);
+  92   1      OLED_ShowChar(94,6,table_V[ss]);
+  93   1      OLED_ShowChar(102,6,table_V[gg]); 
+  94   1      
+  95   1      }
+  96                      
+  97                    
+  98          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    299    ----
+   CONSTANT SIZE    =     38    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      14
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

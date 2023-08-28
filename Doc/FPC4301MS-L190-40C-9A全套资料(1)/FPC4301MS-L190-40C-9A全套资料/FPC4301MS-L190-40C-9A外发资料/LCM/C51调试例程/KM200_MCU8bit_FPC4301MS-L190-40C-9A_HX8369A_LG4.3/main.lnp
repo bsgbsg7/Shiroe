@@ -1,0 +1,5 @@
+"main.obj",
+"lcd.obj",
+"POWER.obj" 
+TO "main" 
+RAMSIZE(256) 
