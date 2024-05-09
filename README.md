@@ -2,21 +2,21 @@
 
 ## 功能展示
 
-![image](Note/1.png)
+![image](Note/1.jpg)
 
-![image](Note/2.png)
+![image](Note/2.jpg)
 
-![image](Note/3.png)
+![image](Note/3.jpg)
 
-![image](Note/4.png)
+![image](Note/4.jpg)
 
-![image](Note/5.png)
+![image](Note/5.jpg)
 
-![image](Note/6.png)
+![image](Note/6.jpg)
 
-![image](Note/7.png)
+![image](Note/7.jpg)
 
-![image](Note/9.png)
+![image](Note/9.jpg)
 
 ## 一、已实现的功能
 
