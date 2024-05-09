@@ -1,5 +1,23 @@
 # 崇新学堂开放创新实践硬件项目Shiroe（名字取自《记录的地平线》😋😋，嵌软也有挺多好玩的其实🤣🤣）
 
+## 功能展示
+
+![image](Note/1.png)
+
+![image](Note/2.png)
+
+![image](Note/3.png)
+
+![image](Note/4.png)
+
+![image](Note/5.png)
+
+![image](Note/6.png)
+
+![image](Note/7.png)
+
+![image](Note/9.png)
+
 ## 一、已实现的功能
 
 >- 当前的年、月、日、时、分、秒显示
