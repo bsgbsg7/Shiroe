@@ -1,4 +1,4 @@
-# 崇新学堂开放创新实践硬件项目Shiroe（名字取自《记录的地平线》😋😋，嵌软也有挺多好玩的其实🤣🤣）
+# Design of Electronic Perpetual Calendar Based on ESP32 
 
 ## 功能展示
 
